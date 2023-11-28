@@ -1,0 +1,63 @@
+@import 'core/reset';
+@import 'core/fonts';
+@import 'core/helpers';
+
+$container: 1180px;
+$x-intend: 15px;
+$container-width: calc($container + $x-intend * 2);
+
+:root {
+	--container-width: #{$container-width};
+	--container-intend: #{$x-intend};
+
+	--white: #fff;
+	--white-100: #fdfdfd;
+	--white-200: #f3f5f4;
+	--black: #000;
+	--black-100: #18121e;
+
+	--green: #1a3e3e;
+	--yellow: #f2be22;
+
+	--font-second: 'NextArt';
+
+	--font-family: 'NunitoSans';
+	--font-size: 16px;
+	--line-height: normal;
+	--font-weight: 400;
+	--background: #fff;
+	--color: #000;
+}
+
+body {
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	font-family: var(--font-family);
+	font-weight: var(--font-weight);
+	background-color: var(--background);
+	color: var(--color);
+}
+
+.wrapper {
+	position: relative;
+	overflow-x: hidden;
+}
+[class$='-container'] {
+	max-width: var(--container-width);
+
+	padding: 0 var(--container-intend);
+	margin: 0 auto;
+}
+
+@import 'core/typography';
+
+@import 'components/buttons';
+@import 'components/menu';
+@import 'components/select';
+@import 'components/datepicker';
+@import 'components/badge';
+
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'pages/main';

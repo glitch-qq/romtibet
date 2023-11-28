@@ -1,0 +1,75 @@
+.heading {
+	&-1 {
+		color: var(--white-100);
+		font-family: var(--font-second);
+		font-size: 50px;
+		font-weight: 700;
+		line-height: 150%;
+		letter-spacing: 1px;
+
+		@media all {
+			@media (min-width: 1023.98px) and (max-width: #{$container-width}) {
+				font-size: 43px;
+			}
+			@media (min-width: 767.98px) and (max-width: 1024px) {
+				font-size: 36px;
+			}
+			@media (min-width: 575.98px) and (max-width: 768px) {
+				font-size: 32px;
+			}
+			@media (max-width: 576px) {
+				font-size: 28px;
+			}
+		}
+	}
+	&-2 {
+		color: var(--black-100);
+		font-size: 32px;
+		font-weight: 800;
+		line-height: 120%;
+
+		@media all {
+			@media (min-width: 767.98px) and (max-width: 1024px) {
+				font-size: 28px;
+			}
+			@media (min-width: 575.98px) and (max-width: 768px) {
+				font-size: 26px;
+			}
+			@media (max-width: 576px) {
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+.top-text {
+	color: var(--yellow);
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 83%;
+
+	@media all {
+		@media (min-width: 767.98px) and (max-width: 1024px) {
+			font-size: 22px;
+		}
+		@media (min-width: 575.98px) and (max-width: 768px) {
+			font-size: 18px;
+		}
+		@media (max-width: 576px) {
+			font-size: 16px;
+		}
+	}
+}
+
+.paragraph {
+	color: var(--black-100);
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 150%;
+
+	@media all {
+		@media (max-width: 576px) {
+			font-size: 16px;
+		}
+	}
+}

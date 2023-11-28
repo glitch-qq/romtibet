@@ -1,0 +1,111 @@
+.select {
+	position: relative;
+	.select-group {
+	}
+}
+.choices {
+	position: relative;
+
+	border-radius: 8px;
+	&.is-open {
+		.choices__item--choice {
+		}
+		.choices__list--single {
+			background-color: #fdfdfd;
+			color: var(--black-100);
+			border-radius: 8px 8px 0 0;
+		}
+		.choices__list--dropdown {
+			opacity: 1;
+			visibility: visible;
+			top: 100%;
+		}
+	}
+	.is-selected {
+	}
+	.is-highlighted {
+		background-color: var(--black-100);
+		color: var(--white-100);
+		border-radius: 4px;
+	}
+	&__inner {
+	}
+	&__input {
+		display: none;
+
+		&--cloned {
+		}
+	}
+	&__list {
+		&--single {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			padding: 14px 16px;
+
+			color: #fdfdfd;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 150%;
+			white-space: nowrap;
+
+			border-radius: 8px;
+			border: 1px solid;
+			cursor: pointer;
+
+			&::after {
+				content: '';
+				width: 20px;
+				height: 20px;
+
+				background: url(../../assets/icons/chevron.svg) center / contain
+					no-repeat;
+			}
+		}
+		&--dropdown {
+			position: absolute;
+			top: 80%;
+			left: 1px;
+			right: 1px;
+			z-index: 100000;
+
+			opacity: 0;
+			visibility: hidden;
+			background-color: #fdfdfd;
+
+			transition: opacity 0.2s linear, visibility 0.2s linear, top 0.2s linear;
+
+			.choices__list {
+				display: flex;
+				flex-direction: column;
+
+				gap: 5px;
+			}
+			.choices__placeholder{
+				display: none;
+			}
+		}
+	}
+	&__item {
+		&--selectable {
+		}
+		&--choice {
+			padding: 5px 16px;
+			color: var(--black-100);
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 150%;
+
+			cursor: pointer;
+
+			&:hover {
+				@media (any-hover: hover) {
+					background-color: var(--black-100);
+					color: var(--white-100);
+					border-radius: 4px;
+				}
+			}
+		}
+	}
+}

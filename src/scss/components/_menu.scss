@@ -1,0 +1,163 @@
+.menu {
+	display: none;
+
+	@media (max-width: 767.98px) {
+		display: block;
+	}
+	&-trigger {
+		position: relative;
+
+		padding: 0;
+
+		width: 30px;
+		height: 30px;
+
+		// arrows
+		span {
+			position: absolute;
+			left: 4px;
+			right: 4px;
+
+			height: 3px;
+
+			background-color: var(--white);
+			border-radius: 200px;
+			transition: transform 0.2s linear, left 0.2s linear;
+
+			&:nth-child(1) {
+				top: 6px;
+			}
+			&:nth-child(2) {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			&:nth-child(3) {
+				bottom: 6px;
+				left: 14px;
+			}
+		}
+
+		&:hover:not([class$='active']) {
+			@media (any-hover: hover) {
+				span {
+					&:nth-child(3) {
+						left: 4px;
+					}
+				}
+			}
+		}
+
+		// menu-trigger.active
+		&.active {
+			span {
+				&:nth-child(1) {
+					top: 50%;
+					transform: translateY(-50%) rotate(-45deg);
+				}
+				&:nth-child(2) {
+					opacity: 0;
+				}
+				&:nth-child(3) {
+					left: 3px;
+					bottom: 50%;
+					transform: translateY(50%) rotate(45deg);
+				}
+			}
+		}
+	}
+	&-content {
+		position: absolute;
+		top: 90px;
+		z-index: 10000;
+
+		padding: 40px 20px;
+
+		max-height: 550px;
+
+		border-radius: 40px 0 0 40px;
+		background-color: var(--green);
+		transition: opacity 0.2s linear, visibility 0.2s linear, right 0.2s linear;
+
+		// Animation
+		opacity: 0;
+		visibility: hidden;
+		right: -100%;
+
+		// Scrollbar
+		overflow: auto;
+		scrollbar-width: thin;
+		scrollbar-color: var(--white-100) transparent;
+
+		&::-webkit-scrollbar {
+			width: 21px;
+		}
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
+			border-radius: 999px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: var(--white-100);
+			border-radius: 999px;
+			border: 8px solid transparent;
+			background-clip: padding-box;
+		}
+
+		// .menu-content.active
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			right: 0;
+		}
+
+		&-top{
+			display: flex;
+			justify-content: flex-end;
+
+			margin-bottom: 10px;
+		}
+
+		@media all {
+			@media (max-width: 425px) {
+			}
+		}
+	}
+	&-nav {
+		display: flex;
+		flex-direction: column;
+
+		gap: 6px;
+
+		&-link {
+			display: flex;
+			align-items: center;
+
+			gap: 7px;
+			padding: 5px;
+
+			color: var(--white-100);
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 128%;
+
+			transition: color 0.2s linear;
+
+			svg {
+				width: 6px;
+				height: 10px;
+				fill: var(--white-100);
+
+				transition: fill 0.2s linear;
+			}
+
+			&:hover {
+				@media (any-hover: hover) {
+					color: var(--yellow);
+					text-decoration: underline;
+					svg {
+						fill: var(--yellow);
+					}
+				}
+			}
+		}
+	}
+}

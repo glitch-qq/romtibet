@@ -1,0 +1,25 @@
+.datepicker {
+	position: relative;
+
+	&-input {
+		width: 100%;
+
+		padding: 14px 16px;
+
+		color: var(--white-100);
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 150%;
+
+		border-radius: 8px;
+		border: 1px solid;
+		cursor: pointer;
+
+		background: url(../../assets/icons/calendar.svg) 95% center no-repeat,
+			transparent;
+
+		&::placeholder {
+			color: var(--white-100);
+		}
+	}
+}
